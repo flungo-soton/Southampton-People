@@ -16,26 +16,10 @@ import org.jsoup.select.Elements;
 public class SotonPeople {
 	
 	public static void main(String[] args) {
-		Document page = null;
-		try {
-			page = Jsoup.connect("http://www.ecs.soton.ac.uk/people/dem").get();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		String name = getName(page);
+		Person person = new Person("dem");
+		
+		String name = person.getName();
 		
 		System.out.println(name);
-	}
-	
-	private static String getName(Document document) {
-		Elements h2s = document.getElementsByTag("h2");
-		String h2Text = null;
-		int i = 0;
-		for (Element h2 : h2s) {
-			if (i == 3)	h2Text = h2.text();
-			i++;
-		}
-		
-		return h2Text;
 	}
 }
