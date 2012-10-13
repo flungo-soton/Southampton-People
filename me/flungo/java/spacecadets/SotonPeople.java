@@ -14,12 +14,8 @@ import org.jsoup.select.Elements;
  * @author Fabrizio
  */
 public class SotonPeople {
-
-	/**
-	 * @param args the command line arguments
-	 */
+	
 	public static void main(String[] args) {
-		// TODO code application logic here
 		Document page = null;
 		try {
 			page = Jsoup.connect("http://www.ecs.soton.ac.uk/people/dem").get();
