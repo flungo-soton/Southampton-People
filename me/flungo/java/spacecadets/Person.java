@@ -19,17 +19,26 @@ public class Person {
 	
 	Element content;
 	
-	Person(String id) {
+	Person(String id) throws NullPointerException {
 		try {
 			page = Jsoup.connect("http://www.ecs.soton.ac.uk/people/" + id).get();
 			content = page.getElementById("node-78");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		if (content.getElementsByTag("p").text().startsWith("This page either does not exist or you are not able to view it.")) {
+			throw new NullPointerException();
+		}
 	}
 		
 	public String getName() throws NullPointerException {
 		Elements h2 = content.getElementsByTag("h2");
+		
+		return h2.text();
+	}
+	
+	public String getOU() throws NullPointerException {
+		Elements h2 = content.getElementsByClass("organization-unit");
 		
 		return h2.text();
 	}
