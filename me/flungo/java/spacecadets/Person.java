@@ -19,8 +19,13 @@ public class Person {
 	
 	Element content;
 	
-	String name;
+	String Name;
 	String OU;
+	String ON;
+	String Adr;
+	String Role;
+	String Tel;
+	String Email;
 	
 	Person(String id) throws NullPointerException {
 		try {
@@ -35,11 +40,11 @@ public class Person {
 	}
 		
 	public String getName() throws NullPointerException {
-		if (name.isEmpty()) {
+		if (Name.isEmpty()) {
 			Elements h2 = content.getElementsByTag("h2");
 			return h2.text();
 		} else {
-			return name;
+			return Name;
 		}
 	}
 	
@@ -49,6 +54,51 @@ public class Person {
 			return h2.text();
 		} else {
 			return OU;
+		}
+	}
+	
+	public String getON() throws NullPointerException {
+		if (ON.isEmpty()) {
+			Elements h2 = content.getElementsByClass("organization-name");
+			return h2.text();
+		} else {
+			return ON;
+		}
+	}
+	
+	public String getAdr() throws NullPointerException {
+		if (Adr.isEmpty()) {
+			Elements h2 = content.getElementsByClass("adr");
+			return h2.text();
+		} else {
+			return Adr;
+		}
+	}
+	
+	public String getRole() throws NullPointerException {
+		if (Role.isEmpty()) {
+			Elements h2 = content.getElementsByClass("role");
+			return h2.text();
+		} else {
+			return Role;
+		}
+	}
+	
+	public String getTel() throws NullPointerException {
+		if (Tel.isEmpty()) {
+			Elements h2 = content.getElementsByClass("tel");
+			return h2.text();
+		} else {
+			return Tel;
+		}
+	}
+	
+	public String getEmail() throws NullPointerException {
+		if (Email.isEmpty()) {
+			Elements h2 = content.getElementsByClass("email");
+			return h2.text();
+		} else {
+			return Email;
 		}
 	}
 }
