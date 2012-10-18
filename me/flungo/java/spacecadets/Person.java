@@ -19,6 +19,9 @@ public class Person {
 	
 	Element content;
 	
+	String name;
+	String OU;
+	
 	Person(String id) throws NullPointerException {
 		try {
 			page = Jsoup.connect("http://www.ecs.soton.ac.uk/people/" + id).get();
@@ -32,14 +35,20 @@ public class Person {
 	}
 		
 	public String getName() throws NullPointerException {
-		Elements h2 = content.getElementsByTag("h2");
-		
-		return h2.text();
+		if (name.isEmpty()) {
+			Elements h2 = content.getElementsByTag("h2");
+			return h2.text();
+		} else {
+			return name;
+		}
 	}
 	
 	public String getOU() throws NullPointerException {
-		Elements h2 = content.getElementsByClass("organization-unit");
-		
-		return h2.text();
+		if (OU.isEmpty()) {
+			Elements h2 = content.getElementsByClass("organization-unit");
+			return h2.text();
+		} else {
+			return OU;
+		}
 	}
 }
