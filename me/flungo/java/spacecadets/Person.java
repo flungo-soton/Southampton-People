@@ -42,7 +42,8 @@ public class Person {
 	public String getName() throws NullPointerException {
 		if (Name.isEmpty()) {
 			Elements h2 = content.getElementsByTag("h2");
-			return h2.text();
+			Name = h2.text();
+			return Name;
 		} else {
 			return Name;
 		}
@@ -51,7 +52,8 @@ public class Person {
 	public String getOU() throws NullPointerException {
 		if (OU.isEmpty()) {
 			Elements h2 = content.getElementsByClass("organization-unit");
-			return h2.text();
+			OU = h2.text()
+			return OU;
 		} else {
 			return OU;
 		}
@@ -60,7 +62,8 @@ public class Person {
 	public String getON() throws NullPointerException {
 		if (ON.isEmpty()) {
 			Elements h2 = content.getElementsByClass("organization-name");
-			return h2.text();
+			ON = h2.text();
+			return ON;
 		} else {
 			return ON;
 		}
@@ -69,7 +72,8 @@ public class Person {
 	public String getAdr() throws NullPointerException {
 		if (Adr.isEmpty()) {
 			Elements h2 = content.getElementsByClass("adr");
-			return h2.text();
+			Adr = h2.text()
+			return Adr;
 		} else {
 			return Adr;
 		}
@@ -78,7 +82,8 @@ public class Person {
 	public String getRole() throws NullPointerException {
 		if (Role.isEmpty()) {
 			Elements h2 = content.getElementsByClass("role");
-			return h2.text();
+			Role = h2.text();
+			return Role;
 		} else {
 			return Role;
 		}
@@ -87,7 +92,8 @@ public class Person {
 	public String getTel() throws NullPointerException {
 		if (Tel.isEmpty()) {
 			Elements h2 = content.getElementsByClass("tel");
-			return h2.text();
+			Tel = h2.text();
+			return Tel;
 		} else {
 			return Tel;
 		}
@@ -96,7 +102,8 @@ public class Person {
 	public String getEmail() throws NullPointerException {
 		if (Email.isEmpty()) {
 			Elements h2 = content.getElementsByClass("email");
-			return h2.text();
+			Email = h2.text();
+			return Email;
 		} else {
 			return Email;
 		}
