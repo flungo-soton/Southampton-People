@@ -52,7 +52,7 @@ public class Person {
 	public String getOU() throws NullPointerException {
 		if (OU.isEmpty()) {
 			Elements h2 = content.getElementsByClass("organization-unit");
-			OU = h2.text()
+			OU = h2.text();
 			return OU;
 		} else {
 			return OU;
@@ -72,7 +72,7 @@ public class Person {
 	public String getAdr() throws NullPointerException {
 		if (Adr.isEmpty()) {
 			Elements h2 = content.getElementsByClass("adr");
-			Adr = h2.text()
+			Adr = h2.text();
 			return Adr;
 		} else {
 			return Adr;
